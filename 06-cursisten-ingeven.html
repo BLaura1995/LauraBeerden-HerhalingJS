@@ -9,15 +9,36 @@
 
 <body>
     <script>
-        var namenCursisten = new Array();
+        var cursisten = new Array();
 
         function ingeven() {
-            var namen = prompt('Welke namen moeten er ingegeven worden?');
-            if (namenelse
-                if (namen == 0) {
-                    document.write("U hebt op niets ingegeven");
-                }
+            var cursist = prompt("Geef de naam van de cursist in. (0 om te stoppen)");
+            if (cursist == null) {
+                document.write("<p>U heeft geanulleerd!</p>");
+            } else if (cursist.length == 0) {
+                document.write("<p>U heeft niets ingevuld!</p>");
+            } else if (cursist == "0") {
+                document.write('<p>U bent gestopt met cursisten ingeven.</p>')
+                tonen()
+            } else {
+                cursisten.push(cursist);
+                ingeven();
             }
+        }
+
+        function tonen() {
+            if (cursisten.length > 0) {
+                document.write("<p>Dit zijn de cursisten:");
+                var lengte = cursisten.length;
+                for (i = 0; i < lengte; i++) {
+                    document.write("<p>" + cursisten[i] + "</p>");
+                }
+            } else {
+                document.write("<p>Er zijn geen cursisten ingegeven.");
+            }
+        }
+
+        ingeven();
     </script>
 </body>
 
