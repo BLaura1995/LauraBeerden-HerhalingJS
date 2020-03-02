@@ -9,19 +9,19 @@
 
 <body>
     <script>
-        var dag = prompt('Welke dag is het vandaag? ');
-        if (dag == null) {
-            document.write('U heeft geanuleerd');
-        }
-        if (dag == false) {
-            document.write('Je hebt geen gegevens ingevuld!')
+        var dag = prompt('Welke dag is het vandaag?');
 
-        }
-        if (dag == "vrijdag" || "zaterdag" || "zondag") {
+        if (dag == null) {
+            document.write("U heeft geannuleerd");
+        } else if (dag == false) {
+            document.write('Je hebt geen gegevens ingevuld!');
+        } else if (dag == " ") {
+
+            document.write('U hebt iets niet juist ingevoerd!!');
+        } else if (dag == "maandag" || "dinsdag" || "woensdag" || "donderdag") {
+            document.write("Helaas, het is geen weekend");
+        } else if (dag == "vrijdag" || "zaterdag" || "zondag") {
             document.write('Hoera het is weekend!');
-        }
-        if {
-            document.write("Helaas, het is geen weekend")
         }
     </script>
 </body>
