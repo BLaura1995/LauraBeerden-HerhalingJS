@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--     
+ Indien er iets werd ingetikt controleer je de email met 1 opdracht:Bevat de email een @ en een punt en geen spatie?Indien dit niet zo is druk je af in het document: Dit lijkt geen correct emailadres te zijn!Indien dit wel ok is, controleer je of het aantal tekens voor de @ minstens 2 is.Indien dit niet zo is druk je af in het document: Er moeten minstens 2 tekens voor de @staan.Als dit wel ok is, druk je af in het document: Ziet er goed uit! -->
+
+
+    <script>
+        var email = prompt("Geef je emailadres in:");
+        if (email == null) {
+            document.write("<p>U heeft geannuleerd!</p>");
+        } else if (email.length == 0) {
+            document.write("<p>U heeft niets ingegeven!</p>");
+        } else {
+            var at = email.indexOf("@");
+            var punt = email.indexOf(".");
+            var spatie = email.indexOf(" ");
+            if ((at == -1) || (punt == -1) || spatie != -1) {
+                document.write("Dit lijkt geen correct email adres te zijn!");
+            } else if (email.substring(0, at).length < 3) {
+                document.write("Er moeten minstens 2 tekens voor de @ staan");
+            } else {
+                document.write("Ziet er goed uit!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
